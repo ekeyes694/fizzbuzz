@@ -1,17 +1,21 @@
 $(document).ready(function () {
-
+    $('.playAgain').click(function () {
+        window.location.reload();
+    });
 
     function fizzbuzz(limit) {
 
         function check(n) {
             if (n % 15 == 0) {
-                document.write('<li>FizzBuzz</li>');
+                var output = '<li>FizzBuzz</li>';
             } else if (n % 3 == 0) {
-                document.write('<li>Fizz</li>');
+                var output = '<li>Fizz</li>';
             } else if (n % 5 == 0) {
-                document.write('<li>Buzz</li>');
-            } else document.write("<li>" +
-                n + "</li>");
+                var output = '<li>Buzz</li>';
+            } else {
+                var output = "<li>" + n + "</li>";
+            }
+            return output;
         }
         for (var counter = 1; counter <= limit; counter++) {
             $('#results').append(check(counter));
@@ -35,8 +39,6 @@ $(document).ready(function () {
     if (userInputCorrectFlag = true) {
         fizzbuzz(limit);
     }
-
-
 
 
 
